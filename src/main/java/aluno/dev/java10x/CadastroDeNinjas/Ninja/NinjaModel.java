@@ -16,12 +16,20 @@ public class NinjaModel {
 
     @Id //Informa que a tabela trabalha com ID
     @GeneratedValue (strategy = GenerationType.IDENTITY) //Gera os valores da ID sequencialmente
+    @Column(name = "id") //Caso o nome não seja setado por esta anotation, o nome da coluna será o nome da variável
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true)
     private String email;
+
+    @Column(name = "idade")
     private int idade;
+
+    @Column(name = "img_url")
+    private String imgUrl;
 
     @ManyToOne // Um ninja, uma missão
     @JoinColumn (name = "missoes_id") //Criando a foreign key (chave estrangeira)
