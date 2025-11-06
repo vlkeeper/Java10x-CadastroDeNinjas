@@ -17,7 +17,10 @@ public class NinjaModel {
     @Id //Informa que a tabela trabalha com ID
     @GeneratedValue (strategy = GenerationType.IDENTITY) //Gera os valores da ID sequencialmente
     private Long id;
-    private String nome, email;
+    private String nome;
+
+    @Column(unique = true)
+    private String email;
     private int idade;
 
     @ManyToOne // Um ninja, uma missão
