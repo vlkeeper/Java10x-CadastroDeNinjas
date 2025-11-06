@@ -1,5 +1,6 @@
-package aluno.dev.java10x.CadastroDeNinjas;
+package aluno.dev.java10x.CadastroDeNinjas.Ninja;
 
+import aluno.dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
 //JPA = Java Persistent API
@@ -12,6 +13,10 @@ public class NinjaModel {
     private Long id;
     private String nome, email;
     private int idade;
+
+    @ManyToOne // Um ninja, uma missão
+    @JoinColumn (name = "missoes_id") //Criando a foreign key (chave estrangeira)
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
