@@ -3,7 +3,7 @@ package aluno.dev.java10x.CadastroDeNinjas.Ninja;
 import org.springframework.web.bind.annotation.*;
 
 @RestController //Controlador para APIs REST
-@RequestMapping
+@RequestMapping("/ninjas") //Mapeia as API's, é possível colocar um caminho no Resquest e todos os demais mappings são mapeados dentro deste caminho principal
 public class NinjaController {
 
     @GetMapping("/boasVindas") //Anotação que pega informações e mapeia
